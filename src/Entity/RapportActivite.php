@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\RapportActiviteRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\RapportActiviteRepository;
 
 #[ORM\Entity(repositoryClass: RapportActiviteRepository::class)]
+#[ApiResource]
 class RapportActivite
 {
     #[ORM\Id]

@@ -5,16 +5,17 @@ namespace App\Controller;
 use App\Entity\RapportActivite;
 use App\Form\RapportActiviteType;
 use App\Repository\RapportActiviteRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/rapport')]
 class RapportActiviteController extends AbstractController
 {
     #[Route('/index', name: 'rapport', methods: ['GET'])]
-    public function index(RapportActiviteRepository $rapportActiviteRepository): Response
+    public function index(RapportActiviteRepository $rapportActiviteRepository): JsonResponse
     {
         return $this->render('rapport_activite/index.html.twig', [
             'rapport_activites' => $rapportActiviteRepository->findAll(),
