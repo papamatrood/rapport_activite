@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RapportActivite{% endblock %}
+
+{% block body %}
+    <h1>RapportActivite</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rapport_activite.id }}</td>
+            </tr>
+            <tr>
+                <th>Installation</th>
+                <td>{{ rapport_activite.installation }}</td>
+            </tr>
+            <tr>
+                <th>Interqualite</th>
+                <td>{{ rapport_activite.interqualite }}</td>
+            </tr>
+            <tr>
+                <th>Interdepannage</th>
+                <td>{{ rapport_activite.interdepannage }}</td>
+            </tr>
+            <tr>
+                <th>Visite</th>
+                <td>{{ rapport_activite.visite }}</td>
+            </tr>
+            <tr>
+                <th>Recuperation</th>
+                <td>{{ rapport_activite.recuperation }}</td>
+            </tr>
+            <tr>
+                <th>Autre</th>
+                <td>{{ rapport_activite.autre }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ rapport_activite.createdAt ? rapport_activite.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('rapport') }}">back to list</a>
+
+    <a href="{{ path('rapport_edit', {'id': rapport_activite.id}) }}">edit</a>
+
+    {{ include('rapport_activite/_delete_form.html.twig') }}
+{% endblock %}

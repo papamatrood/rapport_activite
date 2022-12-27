@@ -8,5 +8,9 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
+import './react/index'
+
+import './js/bootstrap.bundle.min.js'
+
 // start the Stimulus application
 import './bootstrap';
